@@ -1,4 +1,9 @@
 # MyBing
+
+Won the best Microsoft Hack price at Columbia DevFest2015
+http://devfest2015.challengepost.com/
+http://devfe.st/
+
 Change your Bing-search homepage to wallpapers that you really like --- a handy chrome extension
 
 Bing search homepage is interesting, it shows a different background picture everyday.
