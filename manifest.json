@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "MyBing",
+  "description": "Author: Qiming Chen",
+  "version": "1.0",
+  "permissions": [
+          "storage",
+          "tabs"
+        ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.bing.com/", 
+                  "http://www.bing.com/?scope=web&mkt=en-US&FORM=QBLH", 
+                  "http://www.bing.com/?q=&go=Submit&qs=n&form=QBLH&scope=web&pq=&sc=0-0&sp=-1&sk=&cvid=*", 
+                  "http://www.bing.com/?scope=web&mkt=en-US&FORM=QBRE"],
+      "js": ["jquery-2.1.3.min.js", "myscript.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+
+}
