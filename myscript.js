@@ -3,22 +3,27 @@ chrome.storage.local.get('img', function(result) {
 		document.getElementById("bgDiv").style.backgroundImage = "url('" + result.img + "')";
 });
 
-$( ".sh_hs" ).remove();
-$( ".sh_hst" ).remove();
-$('#sh_rdiv').remove();
-$('#hp_vidwrp').remove();
-$('#vid').remove();
+
 
 var value;
 chrome.storage.local.get('value', function(result) {
 	value = result.value;
 });
 
+
+$( ".sh_hs" ).remove();
+$( ".sh_hst" ).remove();
+$('#sh_rdiv').remove();
+$('#hp_vidwrp').remove();
+$('#vid').remove();
+
 chrome.storage.local.get('date', function(result) {
 	var d = new Date();
 	var n = d.getDate();
 	if (result.date != n)
+	{
 		loadXMLDoc();
+	}
 });
 
 function loadXMLDoc()
@@ -27,6 +32,7 @@ function loadXMLDoc()
 	xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange=function()
 	{
+
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var jsonstr = xmlhttp.responseText;
 			var jsonobj = JSON.parse(jsonstr);
@@ -45,6 +51,10 @@ function loadXMLDoc()
 	xmlhttp.open("Get", requestStr, true);
 	xmlhttp.setRequestHeader('Authorization', 'Basic ' + btoa(':moR8jQXGzTehpR2NklGiMB6aOzMfgYV8SSWe5Mo/lDE'));
 	xmlhttp.send();
+}
+
+function getRandomInt (min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function sendValue(imgLink) {
